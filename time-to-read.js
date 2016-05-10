@@ -1,12 +1,22 @@
 
+var wikiarticle = document.querySelector("#container");
+var minToRead = document.querySelector("#min-to-read");
+//minToRead holds DOM Element
 
-function timeToRead(string) {
-  var wordCount = 0;
-  for (var idx = 0; idx < string.length; idx++) {
-    wordCount++;
-  }
-  var wpm = 230;
-  time = wordCount/wpm;
-  return time;
+console.log(minToRead);
+
+function timeToRead(str) {
+  console.log(str);
+  var x = str.split(" ").length;
+  x = x/230;
+  x = Math.round(x);
+  return x;
 }
-timeToRead();
+
+
+var result = timeToRead(wikiarticle.textContent);
+//textContent holds text for DOM element
+minToRead.textContent = result + " minutes to read";
+
+
+  console.log(result);
